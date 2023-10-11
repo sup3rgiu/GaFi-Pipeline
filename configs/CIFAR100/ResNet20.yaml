@@ -1,0 +1,27 @@
+DATA:
+  dataset: "CIFAR100"
+  image_size: 32
+  categorical: True
+  val_categorical: True
+  normalize: True
+  merge_train_val: False
+OPTIMIZATION:
+  optimizer: "sgdw"
+  lr: 0.1
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 0.0001
+  batch_size: 128
+  val_batch_size: 128
+  epochs: 300
+MODEL:
+  name: "resnet20"
+  width: 64
+AUG:
+  random_flip: True
+  random_crop: True
+  random_erasing: True
+RUN:
+  seed: 42
+  extra_name: ''
+  mixed_precision: False

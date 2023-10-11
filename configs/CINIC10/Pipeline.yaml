@@ -1,0 +1,42 @@
+DATA:
+  dataset: "CINIC10"
+  image_size: 32
+  categorical: True
+  val_categorical: True
+  normalize: True
+  merge_train_val: False
+OPTIMIZATION:
+  optimizer: "sgdw"
+  lr: 0.1
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 0.0001
+  batch_size: 128
+  val_batch_size: 128
+  epochs: 100
+MODEL:
+  name: "resnet20"
+  width: 64
+AUG:
+  random_flip: True
+  random_crop: True
+  random_erasing: True
+CLS_PRE:
+  name: "resnet20"
+  optimizer: "sgdw"
+  random_erasing: True
+  extra_name: ''
+PIPELINE:
+  gan_name: 'BigGAN_Deep_StudioGAN_cinic10_normalized_seed42_3discStep'
+  steps: ['all']
+  ckpt_epochs: (150, 500, 10)
+  stddev_search: (1, 2, 0.05)
+  threshold_search: (0, 0.9, 0.1)
+  apply_standing_stats: False
+  standing_stats_bs: 192
+  filtering_attempts: -1
+  class_samples: null
+RUN:
+  seed: 42
+  extra_name: ''
+  mixed_precision: True

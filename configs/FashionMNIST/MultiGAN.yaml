@@ -1,0 +1,42 @@
+DATA:
+  dataset: "FashionMNIST"
+  image_size: 32
+  categorical: True
+  val_categorical: True
+  normalize: True
+  merge_train_val: False
+  padding: True
+OPTIMIZATION:
+  optimizer: "sgdw"
+  lr: 0.1
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 0.0001
+  batch_size: 128
+  val_batch_size: 128
+  epochs: 100
+MODEL:
+  name: "resnet20"
+  width: 64
+AUG:
+  random_flip: True
+  random_crop: True
+  random_erasing: True
+CLS_PRE:
+  name: "resnet20"
+  optimizer: "sgdw"
+  random_erasing: True
+  extra_name: ''
+PIPELINE:
+  gan_names: ['BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed18291829_3discStep', 'BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed237137_3discStep', 'BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed42_3discStep', 'BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed1284182_3discStep', 'BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed623237_3discStep', 'BigGAN_Deep_StudioGAN_fashionmnist_pad32_normalized_seed48746_3discStep']
+  one_gan_for_epoch: False
+  apply_standing_stats: False
+  standing_stats_bs: 192
+  filtering_attempts: -1
+  class_samples: null
+  best_class_samples: null
+  best_extra_name: ''
+RUN:
+  seed: 42
+  extra_name: ''
+  mixed_precision: False
