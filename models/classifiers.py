@@ -38,7 +38,7 @@ def Simple_Classifier(
     h = tfkl.Flatten(name='flatten')(h)
     h = tfkl.Dense(256, activation='relu', kernel_initializer=init(), name='dense_1')(h)
     h = tfkl.Dropout(0.3, name='dropout_3')(h)
-    h = tfkl.Dense(num_classes, activation='softmax', kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed), name='dense_logits')(h)
+    h = tfkl.Dense(num_classes, kernel_initializer=tf.keras.initializers.GlorotUniform(seed=seed), name='dense_logits')(h)
     h = tfkl.Activation('softmax', dtype='float32', name='out')(h)
     
     return tfk.Model(image, h, name="Simple_Classifier")
@@ -276,7 +276,7 @@ def resnet1202(input_shape, num_classes, width=16, seed=None, augmentation_layer
 
 ############# Utils #############
 
-def get_classifier(model, input_shape, num_classes, width=None, seed=None, augmentation_layer=None):
+def get_classifier(model, input_shape, num_classes, width=16, seed=None, augmentation_layer=None):
     if model == 'resnet14':
         return resnet14(input_shape, num_classes, width, seed=seed, augmentation_layer=augmentation_layer)
     elif model == 'resnet20':
