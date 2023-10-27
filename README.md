@@ -4,7 +4,8 @@
 
 The official TensorFlow implementation of the BMVC2023 paper: [**Bridging the Gap: Enhancing the Utility of Synthetic Data via Post-Processing Techniques**](https://arxiv.org/abs/2305.10118).
 
-![Proposed Pipeline](https://github.com/sup3rgiu/GaFi-Pipeline/assets/7725068/3dba74d9-94b1-42df-8ca5-f966975ff5c6|width=10)
+![Proposed Pipeline](https://github.com/sup3rgiu/GaFi-Pipeline/assets/7725068/dafeddc7-dccd-4024-a9ad-2af87957db78)
+
 
 ## Results
 
