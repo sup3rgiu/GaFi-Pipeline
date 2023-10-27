@@ -171,8 +171,6 @@ def run_pipeline_step(
 
     print(f"c_path: {classifier_full_save_path}\n")
 
-    misc.print_gpu_usage()
-
     ### Generate initial fake dataset ###
     fake_dataset, fake_labels = misc.generate_dataset(model=gen, num_classes=cfgs.DATA.num_classes, filter=filter,
                                                       class_samples=class_samples, batch_size=batch_size,
@@ -193,7 +191,7 @@ def run_pipeline_step(
     history_df = pd.DataFrame()
     for epoch in range(epochs):
         print('Epoch {}/{}'.format(epoch+1, epochs))
-        misc.print_gpu_usage()
+        #misc.print_gpu_usage()
 
         # train classifier on fake dataset for one epoch
         _history = classifier_fake.fit(
