@@ -5,8 +5,14 @@ import math
 import os
 import numpy as np
 import pandas as pd
-from keras.utils import io_utils
-from keras.utils import tf_utils
+
+try:
+    from keras.utils import io_utils
+    from keras.utils import tf_utils
+except:
+    from keras.src.utils import io_utils
+    from keras.src.utils import tf_utils
+
 from tensorflow.python.platform import tf_logging as logging
 import matplotlib.pyplot as plt
 import matplotlib as mpl

@@ -4,8 +4,19 @@ import tensorflow.keras.backend as K
 import keras
 import keras_cv
 import numpy as np
-from keras.layers.preprocessing.image_preprocessing import get_zoom_matrix
-from keras.layers.preprocessing import preprocessing_utils
+
+try:
+    from keras.layers.preprocessing.image_preprocessing import get_zoom_matrix
+    from keras.layers.preprocessing import preprocessing_utils
+except:
+    from keras.src.layers.preprocessing.image_preprocessing import get_zoom_matrix
+    from keras.src.layers.preprocessing import preprocessing_utils
+
+try:
+    from keras_cv.utils import preprocessing as cv_preprocessing
+except:
+    from keras_cv.src.utils import preprocessing as cv_preprocessing
+
 
 tfk = tf.keras
 tfkl = tf.keras.layers
@@ -81,12 +92,12 @@ def _ensure_inputs_are_compute_dtype(self, inputs):
     IMAGES = "images"
     if self._autocast:
         if isinstance(inputs, dict):
-            inputs[IMAGES] = keras_cv.utils.preprocessing.ensure_tensor(
+            inputs[IMAGES] = cv_preprocessing.ensure_tensor(
                 inputs[IMAGES],
                 self.compute_dtype,
             )
         else:
-            inputs = keras_cv.utils.preprocessing.ensure_tensor(
+            inputs = cv_preprocessing.ensure_tensor(
                 inputs,
                 self.compute_dtype,
             )

@@ -24,6 +24,7 @@ def Simple_Classifier(
     
     if augmentation_layer is not None:
         h = augmentation_layer(h)
+        #h.set_shape(image.shape)
         
     init = partial(tfk.initializers.HeNormal, seed=seed)
     
@@ -131,6 +132,7 @@ def ResNet_StudioGAN(
     
     if augmentation_layer is not None:
         h = augmentation_layer(h)
+        #h.set_shape(image.shape)
         
     init = partial(tfk.initializers.HeNormal, seed=seed)
     
@@ -223,6 +225,7 @@ def ResNetW(
     
     if augmentation_layer is not None:
         inputs = augmentation_layer(inputs)
+        #inputs.set_shape(x0.shape)
 
     init = partial(tfk.initializers.HeNormal, seed=seed)
     

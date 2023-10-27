@@ -98,7 +98,7 @@ def prepare_classifier_parser():
        '--random_zoom', type=str2bool, nargs='?', const=True, default=False, dest='AUG.random_zoom',
         help='Whether to augment with random zoom')
     parser.add_argument(
-       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='DATA.random_erasing',
+       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='AUG.random_erasing',
        help='Whether to augment with random erasing')
     
     ### Run stuff ###
@@ -428,7 +428,7 @@ def prepare_pipeline_parser():
        '--random_zoom', type=str2bool, nargs='?', const=True, default=False, dest='AUG.random_zoom',
         help='Whether to augment with random zoom')
     parser.add_argument(
-       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='DATA.random_erasing',
+       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='AUG.random_erasing',
        help='Whether to augment with random erasing')
     
     ### Classifier pretrained stuff (used to automatically determine the model name) ###
@@ -587,7 +587,7 @@ def prepare_multigan_parser():
        '--random_zoom', type=str2bool, nargs='?', const=True, default=False, dest='AUG.random_zoom',
         help='Whether to augment with random zoom')
     parser.add_argument(
-       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='DATA.random_erasing',
+       '--random_erasing', type=str2bool, nargs='?', const=True, default=True, dest='AUG.random_erasing',
        help='Whether to augment with random erasing')
        
     ### Classifier pretrained stuff (used to automatically determine the model name) ###
