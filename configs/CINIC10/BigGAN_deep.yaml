@@ -41,7 +41,7 @@ MODEL:
   blur_resample: False
   residual_concat: False
   apply_g_ema: True
-  g_ema_decay: 0.999
+  g_ema_decay: 0.9999
   g_ema_start: 1000
 LOSS:
   type: 'hinge'
