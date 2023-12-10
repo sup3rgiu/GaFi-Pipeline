@@ -1,6 +1,6 @@
 # Bridging the Gap: Enhancing the Utility of Synthetic Data via Post-Processing Techniques (BMVC 2023)
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2305.10118)
+[![Paper](https://img.shields.io/badge/arXiv-2305.10118-b31b1b.svg?logo=arxiv)](https://arxiv.org/abs/2305.10118) [![BMVC](https://img.shields.io/badge/BMVC-Paper-<>.svg)](https://proceedings.bmvc2023.org/715)
 
 The official TensorFlow implementation of the BMVC2023 paper: [**Bridging the Gap: Enhancing the Utility of Synthetic Data via Post-Processing Techniques**](https://arxiv.org/abs/2305.10118).
 
